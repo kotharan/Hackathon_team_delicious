@@ -36,7 +36,7 @@
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
-    width: 200px;
+    width: 275px;
     height: 300px;
     background: white;
     position: absolute;
@@ -52,7 +52,7 @@
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
-    width: 200px;
+    width: 275px;
     height: 300px;
     background: white;
     position: absolute;
@@ -64,7 +64,7 @@
     overflow: hidden;
 }
 
-.recipe {
+.ingredients {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
@@ -89,7 +89,7 @@
     background: white;
     position: absolute;
     visibility: visible;
-    left: 275px;
+    left: 320px;
     top: 90px;
     display: block;
     white-space: nowrap;
@@ -98,8 +98,12 @@
 
 .text {
     display: inline;
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: oblique;
     font-size: 20px;
     font-weight: bold;
+}
+
+#home {
+    color: white;
 }

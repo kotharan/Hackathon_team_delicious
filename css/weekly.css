@@ -1,0 +1,170 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.title {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial", Times, serif;
+    font-style: oblique;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("background.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mon {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 20px;
+    top: 80px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#tues {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 300px;
+    top: 80px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#wed {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 575px;
+    top: 80px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#thurs {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 20px;
+    top: 350px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#fri {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 300px;
+    top: 350px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sat {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 575px;
+    top: 350px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sun {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 20px;
+    top: 625px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#parameters {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 470px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 300px;
+    top: 625px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#home {
+    color: white;
+}
