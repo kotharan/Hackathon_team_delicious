@@ -1,0 +1,76 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("background.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial", Times, serif;
+    font-style: oblique;
+    font-size: 70px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#info {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial", Times, sans-serif;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#daily {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#weekly {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}

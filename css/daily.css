@@ -1,0 +1,105 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+    display: block;
+}
+.bg {
+    /* The image used */
+    background-image: url("background.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: "Arial", Times, serif;
+    font-style: oblique;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.parameters {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 300px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 20px;
+    top: 30px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nutrition {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 300px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 20px;
+    top: 350px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.recipe {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 350px;
+    height: 620px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 950px;
+    top: 30px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.info {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 20px;
+    width: 600px;
+    height: 560px;
+    background: white;
+    position: absolute;
+    visibility: visible;
+    left: 275px;
+    top: 90px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text {
+    display: inline;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 20px;
+    font-weight: bold;
+}
