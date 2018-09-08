@@ -9,7 +9,7 @@ const id = '2c673fd4';
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/static', express.static('public'));
-app.set('view engine', handlebars');
+app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
 app.get('/', function(req,res) {
@@ -19,7 +19,7 @@ app.get('/', function(req,res) {
 
 app.get('/daily', function(req,res) {
   var context = {};
-  res.render('daily', context):
+  res.render('daily', context);
 });
 
 app.get('/daily-req', function(req,res) {
@@ -29,6 +29,7 @@ app.get('/daily-req', function(req,res) {
     
     axios.get(path, {
        params: {
+         q: '',
          app_id: id,
          app_key: key,
          diet: req.query.diet,
@@ -45,16 +46,18 @@ app.get('/daily-req', function(req,res) {
        context.url = response.data.hits[0].recipe.url;
        context.yield = response.data.hits[0].recipe.yield;
        context.calories = response.data.hits[0].recipe.calories;
-       context.ingredients = response.data.h[0].recipe.ingredients;
-       context.totalNutrients = response.data.rows[0].recipe.totalNutrients;
-       context.dietLabels = response.data.rows[0].recipe.dietLabels;
-       context.healthLabels = response.data.rows[0].recipe.healthLabels;
+       context.ingredients = response.data.hits[0].recipe.ingredients;
+       context.totalNutrients = response.data.hits[0].recipe.totalNutrients;
+       context.dietLabels = response.data.hits[0].recipe.dietLabels;
+       context.healthLabels = response.data.hits[0].recipe.healthLabels;
+       context.params = req.query;
+       console.log("anything?");
+       console.log(context);
+       res.render('daily-result', context);
      })
      .catch(function (error) {
        context.error = error;
      });
-     context.params = req.query;
-     res.render('daily-result', context);
 });
 
 app.get('/weekly-req', function(req,res) {
