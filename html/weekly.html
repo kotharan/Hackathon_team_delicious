@@ -3,25 +3,82 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Daily Recipe</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
-        .bg {
-            /* The image used */
-            background-image: url("background.jpg");
-            /* Full height */
-            height: 100%;
-            /* Center and scale the image */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    <title>Weekly Recipe</title>
+    <link rel="stylesheet" href="../css/weekly.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
+
 <body>
-    <div class="bg"></div>
+    
+    <div class="title">What's On This Week's Menu?</div>
+    <div class="bg">
+
+        <a href="mainPage.html"><span id="home" class="glyphicon glyphicon-home"></span></a>
+
+        <div id="mon">
+            <p class="text">Monday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="tues">
+            <p class="text">Tuesday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="wed">
+            <p class="text">Wednesday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="thurs">
+            <p class="text">Thursday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="fri">
+            <p class="text">Friday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="sat">
+            <p class="text">Saturday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="sun" class="day">
+            <p class="text">Sunday:</p>
+            <br />
+            <center>{{name of dish}}</center>
+            <br />
+            <center><button class="btn btn-info btn-sm">Details</button></center>
+        </div>
+
+        <div id="parameters">
+            <p class="text">Parameters:</p>
+            <br />
+            <center>render parameters here</center>
+            <br />
+            <center><button class="btn btn-warning">Edit</button></center>
+        </div>
+
+    </div>
 </body>
 </html>

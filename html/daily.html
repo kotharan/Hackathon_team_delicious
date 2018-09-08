@@ -4,39 +4,50 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
     <title>Daily Recipe</title>
     <link rel="stylesheet" href="../css/daily.css" />
 </head>
 <body>
     <div class="bg">
         <div class="title">Tonight's Dinner:</div>
-        <div class="parameters form-group"><!--Div showing parameters that user put in-->
+
+        <div class="parameters form-group">
+            <!--Div showing parameters that user put in-->
             <center class="text">Parameters: </center>
             <br />
             <center>render parameters here</center>
             <br />
-            <center><button class="btn btn-danger">Edit</button></center>
+            <center><button class="btn btn-warning">Edit</button></center>
         </div>
-        <div class="nutrition form-group"><!--Div showing nutrition facts of the recipe-->       
+
+        <a href="mainPage.html"><span id="home" class="glyphicon glyphicon-home"></span></a>
+
+        <div class="nutrition form-group">
+            <!--Div showing nutrition facts of the recipe-->
             <center class="text">Nutrition: </center>
             <br />
             <center>render nutrition facts here</center>
         </div>
-        <div class="recipe form-group"><!--Div showing recipe-->
-            <center class="text">Recipe: </center>
+
+        <div class="ingredients form-group">
+            <!--Div showing ingredients-->
+            <center class="text">Ingredients: </center>
             <br />
-            <center>render recipe here</center>
+            <center>render ingredient list here</center>
         </div>
+
         <div class="info">
             <!--Div showing general dish info-->
             <center><p class="text">Recipe name: </p>{{recipe_name}}</center>
             <br />
-            <center><p class="text">Calories:</p> {{calories}}</center>
-            <br />
             <center><p class="text">Estimated cooking time: </p> {{est_time}}</center>
             <br />
             <center><img src="../pics/examplePic.jpg" style="width:250px;height:200px;"></center><!--I put in an example pic, you can replace it with the link that the API call returns-->
+            <br />
+            <center><button class="btn btn-info"><a href="some website">Get the recipe here!</a></button></center>
         </div>
+
     </div>
 </body>
 </html>
