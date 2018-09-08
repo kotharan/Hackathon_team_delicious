@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
@@ -8,7 +9,7 @@ const id = '2c673fd4';
 
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
-app.use('/static', express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
