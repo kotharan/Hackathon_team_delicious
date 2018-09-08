@@ -83,11 +83,26 @@
 		font-weight: bold;
 		}
 
-          .list{
+          .dietlist{
                position: relative;
-               bottom: 35%;
+               bottom: 41%;
                right: -42%;
+               color: black;
+
           }
+
+          .allergieslist {
+               position: relative;
+               bottom: 85%;
+               right: -70%;
+               color: black;
+          }
+
+          select{
+               width: 200px;
+          }
+
+
     </style>
 </head>
 <body>
@@ -106,12 +121,39 @@
 			<p class="p2">Calories [Min]</p> <input type=text border-radius="26px" id="Cal_min" >
 			 <button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
 
-                <div class="list">
-                <ul>
-                     <li>HEllo</li>
-                     <li>BYE</li>
-                </ul>
-           </div>
+
+
+                <div class="dietlist">
+                    <font color="#e4ff00"> <h3>Diets</h3></font>
+                     <select name="Diets" size="6" multiple>
+
+                      <option value="Paleo">Paleo</option>
+                      <option value="Primal">Primal</option>
+                      <option value="Vegan">Vegan</option>
+                      <option value="Vegetarian">Vegetarian (Lacto and Ovo)</optin>
+                      <option value="Ketogenic">Ketogenic</option>
+                      <option value="Whole30">Whole 30</option>
+                    </select>
+              </div>
+
+              <div class="allergieslist">
+                <font color="#e4ff00"> <h3>Allergies</h3></font>
+                  <select name="Allergies" size="6" multiple>
+
+                   <option value="Dairy">Dairy</option>
+                   <option value="Egg">Egg</option>
+                   <option value="Gluten">Gluten</option>
+                   <option value=" Grain"> Grain</optin>
+                   <option value="Peanut">Peanut</option>
+                   <option value="Seafood">Seafood</option>
+                   <option value="Sesame">Sesame</option>
+                  <option value="Shellfish">Shellfish</option>
+                  <option value="Soy">Soy</option>
+                  <option value="Sulfite">Sulfite</optin>
+                  <option value="TreeNut">Tree Nut</option>
+                  <option value="Wheat">Wheat</option>
+                </select>
+          </div>
 		</div>
 
 	</div>
