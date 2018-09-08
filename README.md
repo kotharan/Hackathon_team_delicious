@@ -3,7 +3,6 @@
 Meal planner app that accepts requirements for a meal (calories, dietary needs, etc), and generates a one-day or week-long dinner plan.
 
 **Try it here:**  ______
-**not currently fully functional due to error communicating between front end and server**
 
 Created using JavaScript, Node, Express, Handlebars, and Bootstrap, and deployed on ________.
 
