@@ -53,6 +53,10 @@ app.get('/daily-req', function(req,res) {
      .catch(function (error) {
        context.error = error;
      });
+<<<<<<< HEAD
+     context.params = req.query;
+=======
+>>>>>>> 532930bec3ade6dd91d90882b4b8ef28922f8025
      res.render('daily-result', context);
 });
 
