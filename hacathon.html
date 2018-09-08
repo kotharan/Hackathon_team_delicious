@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
     <style>
-	        #weekly {
+	        #SubmitButton {
             position: absolute;
             top: 90%;
             left: 90%;
@@ -13,8 +14,9 @@
             font-style: oblique;
             font-size: 20px;
             font-weight: bold;
+
         }
-		
+
         .bg,body, html {
             height: 100%;
             margin: 0;
@@ -25,7 +27,7 @@
         }
 		.container {
 			position: relative;
-			font-family: Jokerman;
+			font-family: Sofia,Jokerman;
 		}
 
 		.text-block {
@@ -39,40 +41,80 @@
 			color: white;
 			padding-left: 20px;
 			padding-right: 20px;
-			
+
 			}
-			
+
         .bg {
-            
+
             background-image: url("requirements.jpg");
             height: 100%;
             background-position: center;
             background-size: cover;
 			}
-			
+
 		.h4, h4 {
-			font-size: 28px;
+			font-size: 30px;
 			color:#e4ff00;
 			}
-        
+
+		.p1 {
+			font-size: 20px;
+			font-family: Sofia,Jokerman;
+			color:#e4ff00;
+			margin-top: 11%;
+			margin-left: 5%;
+
+		}
+
+		.p2
+		{
+		font-size: 20px;
+		font-family: Sofia,Jokerman;
+		color:#e4ff00;
+		margin-top: 5%;
+		margin-left: 5%;
+		}
+
+		input{
+		background-color: #cfdeb08a;
+		margin-left: 6%;
+		text-indent: 5%;
+		text-color: yellow;
+		font-weight: bold;
+		}
+
+          .list{
+               position: relative;
+               bottom: 35%;
+               right: -42%;
+          }
     </style>
 </head>
 <body>
 
     <div class="bg">
 
-        
-       
-       
+
+
+
     </div>
-	
+	<form>
 	<div class="container">
 		<div class="text-block">
 			<h4 align="center">Food Requirements</h4>
-			<p>What a beautiful sunrise</p>
-			 <button id="weekly" class="btn btn-info">Submit</button>
+			<p class="p1">Calories [Max] </p> <input type=text border-radius="26px" id="Cal_max" >
+			<p class="p2">Calories [Min]</p> <input type=text border-radius="26px" id="Cal_min" >
+			 <button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
+
+                <div class="list">
+                <ul>
+                     <li>HEllo</li>
+                     <li>BYE</li>
+                </ul>
+           </div>
 		</div>
+
 	</div>
-	
+	</form>
 </body>
 </html>
