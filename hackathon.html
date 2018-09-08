@@ -20,14 +20,18 @@
         .bg,body, html {
             height: 100%;
             margin: 0;
-			background-image: url("requirements.jpg");
-            height: 100%;
+            background-image: url("requirements.jpg");
             background-position: center;
             background-size: cover;
+           overflow-x: hidden
+
         }
 		.container {
 			position: relative;
 			font-family: Sofia,Jokerman;
+               animation-name: example;
+               animation-duration: 2s;
+
 		}
 
 		.text-block {
@@ -51,10 +55,15 @@
             background-position: center;
             background-size: cover;
 			}
+               @keyframes example {
+                   0%   { left:100px; top:0px;}
+                   100%  { left:0px; top:0px;}
 
+               }
 		.h4, h4 {
 			font-size: 30px;
 			color:#e4ff00;
+
 			}
 
 		.p1 {
