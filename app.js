@@ -9,7 +9,7 @@ const id = '2c673fd4';
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/static', express.static('public'));
-app.set('view engine', handlebars');
+app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
 app.get('/', function(req,res) {
@@ -19,14 +19,14 @@ app.get('/', function(req,res) {
 
 app.get('/daily', function(req,res) {
   var context = {};
-  res.render('daily', context):
+  res.render('daily', context);
 });
 
 app.get('/daily-req', function(req,res) {
-    
+
     var context = {};
     var path = 'https://api.edamam.com/search';
-    
+
     axios.get(path, {
        params: {
          app_id: id,
@@ -34,7 +34,7 @@ app.get('/daily-req', function(req,res) {
          diet: req.query.diet,
          excluded: req.query.excluded,
          health: req.query.health,
-         calories: req.query.min + '-' + req.query.max    
+         calories: req.query.min + '-' + req.query.max
        }
      })
      .then(function (response) {
