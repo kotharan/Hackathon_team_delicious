@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="./css/weekly.css" />
+    
+<div class="title">What's On This Week's Menu?</div>
+<div class="bg">
+
+<a href="/home"><span id="home" class="glyphicon glyphicon-home"></span></a>
+
+<div id="mon">
+  <p class="text">Monday:</p>
+  <br />
+  <center>{{recipes.[0].label}}</center>
+  <br />
+  <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="tues">
+  <p class="text">Tuesday:</p>
+  <br />
+  <center>{{recipes.[1].label}}</center>
+  <br />
+  <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="wed">
+  <p class="text">Wednesday:</p>
+  <br />
+  <center>{{recipes.[2].label}}</center>
+  <br />
+  <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="thurs">
+  <p class="text">Thursday:</p>
+  <br />
+  <center>{{recipes.[3].label}}</center>
+  <br />
+  <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="fri">
+   <p class="text">Friday:</p>
+   <br />
+   <center>{{recipes.[4].label}}</center>
+   <br />
+   <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="sat">
+  <p class="text">Saturday:</p>
+  <br />
+  <center>{{recipes.[5].label}}</center>
+  <br />
+  <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="sun" class="day">
+   <p class="text">Sunday:</p>
+   <br />
+   <center>{{recipes.[6].label}}</center>
+   <br />
+   <center><button class="btn btn-info btn-sm">Details</button></center>
+</div>
+
+<div id="parameters">
+   <p class="text">Parameters:</p>
+   <br />
+   <center>
+      Diet: {{params.diet}} <br />
+      Ingredients Excluded: {{#each excluded}}{{this }}{{/each}} <br />
+      Health Plan: {{params.health}} <br />
+      Calories: {{params.min}} - {{params.max}}
+   </center>
+   <br />
+   <center><button class="btn btn-warning">Edit</button></center>
+</div>
+
+</div>

@@ -13,9 +13,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
-app.get('/', function(req,res) {
-  var context = {};
-  res.render('home', context);
+app.get('/home', function(req,res) {
+  res.render('home');
 });
 
 app.get('/daily', function(req,res) {
@@ -23,12 +22,17 @@ app.get('/daily', function(req,res) {
   res.render('daily', context);
 });
 
+app.get('/weekly', function(req,res) {
+  var context = {};
+  res.render('weekly', context);
+});
+
 app.get('/daily-req', function(req,res) {
 
     var context = {};
-    var path = 'https://api.edamam.com/search';
+    var apipath = 'https://api.edamam.com/search';
 
-    axios.get(path, {
+    axios.get(apipath, {
        params: {
          q: '',
          app_id: id,
@@ -62,12 +66,12 @@ app.get('/daily-req', function(req,res) {
 });
 
 app.get('/weekly-req', function(req,res) {
-
   var context = {};
-  var path = 'https://api.edamam.com/search';
+  var apipath = 'https://api.edamam.com/search';
 
-  axios.get(path, {
+  axios.get(apipath, {
     params: {
+      q: '',
       app_id: id,
       app_key: key,
       diet: req.query.diet,
@@ -79,16 +83,27 @@ app.get('/weekly-req', function(req,res) {
   .then(function (response) {
     var servings = 0;
     var idx = 0;
+    var servingsLeft;
+    context.recipes = [];
+    servingsLeft = response.data.hits[idx].recipe.yield;
     while(servings < 7 && idx < response.data.count)
     {
       context.recipes.push(response.data.hits[idx].recipe);
-      servings += response.data.rows[idx].yield;
+      servingsLeft = servingsLeft - 1;
+      servings = servings + 1;
+      if(servingsLeft == 0)
+      {
+        idx++;
+        servingsLeft = response.data.hits[idx].recipe.yield;
+      }
     }
+    console.log(context.recipes);
+    context.params = req.query;
+    res.render('weekly-result', context);
   })
   .catch(function (error) {
     context.error = error;
   });
-  res.render('weekly-result', context);
 });
 
 app.use(function(req,res){

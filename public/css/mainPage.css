@@ -5,7 +5,7 @@
 
 .bg {
     /* The image used */
-    background-image: url("../pics/background.jpg");
+    background-image: url("/pics/background.jpg");
     /* Full height */
     height: 100%;
     /* Center and scale the image */
