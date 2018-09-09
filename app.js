@@ -9,11 +9,12 @@ var url = require('url');
 const key = '79af778290ddfbd1a6148aed578f2bc2';
 const id = '2c673fd4';
 
+var port = process.env.PORT || 8080;
+
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'handlebars');
-app.set('port', process.argv[2]);
 
 app.get('/home', function(req,res) {
   res.render('home');
@@ -144,6 +145,6 @@ app.use(function(err, req, res, next){
   res.render('500');
 });
 
-app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+app.listen(port, function(){
+  console.log('Express started on http://localhost:' + port + '; press Ctrl-C to terminate.');
 });
