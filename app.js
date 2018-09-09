@@ -45,7 +45,6 @@ app.get('/daily-req', function(req,res) {
        }
      })
      .then(function (response) {
-       console.log(response);
        context.uri = response.data.hits[0].recipe.uri;
        context.label = response.data.hits[0].recipe.label;
        context.image = response.data.hits[0].recipe.image;
