@@ -118,3 +118,7 @@ font-weight: bold;
 select{
   width: 200px;
 }
+
+#home {
+    color: white;
+}
