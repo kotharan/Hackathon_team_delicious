@@ -8,7 +8,7 @@
 		<h4 align="center">Food Requirements</h4>
 		<p class="p1">Calories [Max] </p> <input name="max" type=text border-radius="26px" id="Cal_max" >
 		<p class="p2">Calories [Min]</p> <input name="min" type=text border-radius="26px" id="Cal_min" >
-		<button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
+              		<button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
 
 	         <div class="dietlist">
                  <font color="#e4ff00"> <h3>Diets</h3></font>
@@ -20,7 +20,7 @@
           </div>
 
          <div class="allergieslist">
-            <font color="#e4ff00"> <h3>Allergies/Health Choices</h3></font>
+            <font color="#e4ff00"> <h3>Allergies/Health</h3></font>
             <select name="health" size="6" multiple>
                   <option value="alcohol-free">Alcohol-free</option>
                   <option value="peanut-free">Peanut-free</option>
@@ -29,10 +29,13 @@
                   <option value="vegan">Vegan</option>
                   <option value="vegetarian">Vegetarian</option>
             </select>
-            <div align="left">
-                <font color="#e4ff00"> Hold ' ctrl ' key to select multiple options</font>
-           </div>
-        </div>
+       </div>
+       <div align="left">
+           {{#if error}}
+              <font color="#e4ff00">{{error}}</font>
+           {{/error}}
+       </div>
+ 
 
 </div>
 
