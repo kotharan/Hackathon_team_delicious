@@ -1,18 +1,20 @@
-<link rel="stylesheet" href="./css/food_request.css">
+<link rel="stylesheet" href="./css/food_request2.css">
 
 <div class="bg">
 </div>
 <form method="get" action="/weekly-req">
 <div class="container">
 	<div class="text-block">
-		<h4 align="center">Food Requirements</h4>
-		<p class="p1">Calories [Max] </p> <input name="max" type=text border-radius="26px" id="Cal_max" >
-		<p class="p2">Calories [Min]</p> <input name="min" type=text border-radius="26px" id="Cal_min" >
-              		<button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
+          <h4 align="center">Food Requirements</h4>
+	  <p class="p1">Calories [Max] </p> <input name="max" type=text border-radius="26px" id="Cal_max" >
+          <p class="p2">Calories [Min]</p> <input name="min" type=text border-radius="26px" id="Cal_min" >
 
-	         <div class="dietlist">
+
+         <button id="SubmitButton" class="btn btn-info" type="Submit">Submit</button>
+
+	  <div class="dietlist">
                  <font color="#e4ff00"> <h3>Diets</h3></font>
-        	 <select name="diet" size="6">
+        	 <select name="diet">
           		 <option value="balanced">Balanced</option>
           		 <option value="high-protein">High-Protein</option>
                   	 <option value="low-carb">Low-Carb</option>
@@ -21,7 +23,7 @@
 
          <div class="allergieslist">
             <font color="#e4ff00"> <h3>Allergies/Health</h3></font>
-            <select name="health" size="6">
+            <select name="health">
                   <option value="alcohol-free">Alcohol-free</option>
                   <option value="peanut-free">Peanut-free</option>
                   <option value="sugar-conscious">Sugar-conscious</option>
@@ -30,7 +32,16 @@
                   <option value="vegetarian">Vegetarian</option>
             </select>
        </div>
-       <div align="left">
+        <div class="servings">
+          <font color="#e4ff00"> <h3>Servings per Meal</h3></font>
+          <select name="servings">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+       </div>
+       <div class="error">
            {{#if error}}
               <font color="#e4ff00">{{error}}</font>
            {{/if}}
