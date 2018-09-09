@@ -12,7 +12,7 @@
 
 	         <div class="dietlist">
                  <font color="#e4ff00"> <h3>Diets</h3></font>
-        	 <select name="diet" size="6" multiple>
+        	 <select name="diet" size="6">
           		 <option value="balanced">Balanced</option>
           		 <option value="high-protein">High-Protein</option>
                   	 <option value="low-carb">Low-Carb</option>
@@ -21,7 +21,7 @@
 
          <div class="allergieslist">
             <font color="#e4ff00"> <h3>Allergies/Health</h3></font>
-            <select name="health" size="6" multiple>
+            <select name="health" size="6">
                   <option value="alcohol-free">Alcohol-free</option>
                   <option value="peanut-free">Peanut-free</option>
                   <option value="sugar-conscious">Sugar-conscious</option>
@@ -33,7 +33,7 @@
        <div align="left">
            {{#if error}}
               <font color="#e4ff00">{{error}}</font>
-           {{/error}}
+           {{/if}}
        </div>
  
 
