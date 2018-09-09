@@ -27,12 +27,14 @@
   <div class="ingredients form-group"><!--Div showing ingredients-->
     <center class="text">Ingredients: </center>
     <br />
-    <center>
-      {{#each ingredients}}
-         {{text}}
-         <br/>
-      {{/each}}
-    </center>
+      <div class="scrollmenu">
+        <center>
+        {{#each ingredients}}
+            {{text}}
+            <br/>
+        {{/each}}
+        </center>
+      </div>
   </div>
   <div class="info">
     <!--Div showing general dish info-->
