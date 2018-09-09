@@ -52,6 +52,7 @@ app.get('/daily-req', function(req,res) {
        }
        else
        {
+         var attempts = 0;
          var idx = 0;         
          while(response.data.hits[idx].recipe.yield < req.query.servings && attempts < 5)
          {
