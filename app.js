@@ -106,7 +106,6 @@ app.get('/weekly-req', function(req,res) {
       while(servings < 7 && idx < response.data.count)
       {
         context.recipes.push(response.data.hits[idx].recipe);
-        context.urls.push('/weekly-detail?' + 'uri=' + response.data.hits[idx].recipe.label + '&label=' + response.data.hits[idx].recipe.label  + '&diet=' + req.query.diet + '&health=' + req.query.health + '&min=' + req.query.min + '&max=' + req.query.max);
         servingsLeft = servingsLeft - 1;
         servings = servings + 1;
         if(servingsLeft == 0)
@@ -124,46 +123,6 @@ app.get('/weekly-req', function(req,res) {
     console.log(error);
     res.render('weekly', context);
   });
-});
-
-app.get('/weekly-detail', function(req,res) {
-    console.log("here");
-    var context = {};
-    var apipath = 'https://api.edamam.com/search';
-
-    axios.get(apipath, {
-       params: {
-         q: req.query.label,
-         app_id: id,
-         app_key: key,
-         diet: req.query.diet,
-         heatlh: req.query.health,
-         min: req.query.min,
-         max: req.query.max
-       }
-     })
-     .then(function (response) {
-       console.log(response.data);
-       context.uri = response.data.hits[0].recipe.uri;
-       context.label = response.data.hits[0].recipe.label;
-       context.image = response.data.hits[0].recipe.image;
-       context.source = response.data.hits[0].recipe.source;
-       context.url = response.data.hits[0].recipe.url;
-       context.yield = response.data.hits[0].recipe.yield;
-       context.calories = response.data.hits[0].recipe.calories;
-       context.ingredients = response.data.hits[0].recipe.ingredients;
-       context.totalNutrients = response.data.hits[0].recipe.totalNutrients;
-       context.dietLabels = response.data.hits[0].recipe.dietLabels;
-       context.healthLabels = response.data.hits[0].recipe.healthLabels;
-       context.params = req.query;
-       res.render('weekly-result-indiv-dish', context);
-     })
-     .catch(function (error) {
-       context.error = error;
-       console.log(error);
-       res.render('weekly', context);
-     });
-
 });
 
 app.use(function(req,res){
