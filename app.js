@@ -45,24 +45,31 @@ app.get('/daily-req', function(req,res) {
        }
      })
      .then(function (response) {
-       if(response.data.count == 0)
+       if(response.data.hits.length == 0)
        {
          context.error = "Please try again (check your calories).";
          res.render('daily', context);
        }
        else
        {
-         context.uri = response.data.hits[0].recipe.uri;
-         context.label = response.data.hits[0].recipe.label;
-         context.image = response.data.hits[0].recipe.image;
-         context.source = response.data.hits[0].recipe.source;
-         context.url = response.data.hits[0].recipe.url;
-         context.yield = response.data.hits[0].recipe.yield;
-         context.calories = response.data.hits[0].recipe.calories;
-         context.ingredients = response.data.hits[0].recipe.ingredients;
-         context.totalNutrients = response.data.hits[0].recipe.totalNutrients;
-         context.dietLabels = response.data.hits[0].recipe.dietLabels;
-         context.healthLabels = response.data.hits[0].recipe.healthLabels;
+         var idx = 0;         
+         while(response.data.hits[idx].recipe.yield < req.query.servings && attempts < 5)
+         {
+           idx++;
+           attempts++;
+         }
+
+         context.uri = response.data.hits[idx].recipe.uri;
+         context.label = response.data.hits[idx].recipe.label;
+         context.image = response.data.hits[idx].recipe.image;
+         context.source = response.data.hits[idx].recipe.source;
+         context.url = response.data.hits[idx].recipe.url;
+         context.yield = response.data.hits[idx].recipe.yield;
+         context.calories = response.data.hits[idx].recipe.calories;
+         context.ingredients = response.data.hits[idx].recipe.ingredients;
+         context.totalNutrients = response.data.hits[idx].recipe.totalNutrients;
+         context.dietLabels = response.data.hits[idx].recipe.dietLabels;
+         context.healthLabels = response.data.hits[idx].recipe.healthLabels;
          context.params = req.query;
          res.render('daily-result', context);
        } 
@@ -90,12 +97,12 @@ app.get('/weekly-req', function(req,res) {
     }
   })
   .then(function (response) {
-    var servings = 0;
+    var meals = 0;
     var idx = 0;
     var servingsLeft;
     context.urls = [];
     context.recipes = [];
-    if(response.data.count < 7)
+    if(response.data.count < 3)
     {
       context.error = "Please try again (check your calories).";
       res.render('weekly', context);
@@ -103,12 +110,12 @@ app.get('/weekly-req', function(req,res) {
     else
     {
       servingsLeft = response.data.hits[idx].recipe.yield;
-      while(servings < 7 && idx < response.data.count)
+      while(meals < 7 && (idx < response.data.count))
       {
         context.recipes.push(response.data.hits[idx].recipe);
-        servingsLeft = servingsLeft - 1;
-        servings = servings + 1;
-        if(servingsLeft == 0)
+        servingsLeft = servingsLeft - req.query.servings;
+        meals++;
+        if(servingsLeft < req.query.servings)
         {
           idx++;
           servingsLeft = response.data.hits[idx].recipe.yield;
