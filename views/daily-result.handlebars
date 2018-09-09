@@ -14,7 +14,10 @@
     <br />
     <center><button class="btn btn-info">Edit</button></center>
   </div>
-  <div class="nutrition form-group"><!--Div showing nutrition facts of the recipe-->
+
+ <a href="/home"><span id="home" class="glyphicon glyphicon-home"></span></a> 
+
+ <div class="nutrition form-group"><!--Div showing nutrition facts of the recipe-->
     <center class="text">Nutrition: </center>
     <br />
     <center>
@@ -24,7 +27,7 @@
       {{/each}}
     </center>
   </div>
-  <div class="recipe form-group"><!--Div showing recipe-->
+  <div class="ingredients form-group"><!--Div showing recipe-->
     <center class="text">Ingredients: </center>
     <br />
     <center>
@@ -38,10 +41,13 @@
     <!--Div showing general dish info-->
     <center><p class="text">Recipe name: </p>{{label}}</center>
     <br />
+    <center><p class="text">Estimated cooking time: </p>{{time}}</center>
+    <br />
     <center><p class="text">Calories:</p>{{calories}}</center>
     <br />
-    <center><p class="text">Source: </p><a href="{{ur}}">{{source}}</a></center>
-    <br />
     <center><img src="{{image}}" style="width:250px;height:200px;"></center>
+    <br />
+    <center><button onclick="location.href='{{url}}'" class="btn btn-info">Get the recipe here!</button></center>
+    <br />
   </div>
 </div>
