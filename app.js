@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var axios = require('axios');
+var https = require('https');
+var url = require('url');
 const key = '79af778290ddfbd1a6148aed578f2bc2';
 const id = '2c673fd4';
 
@@ -64,7 +66,6 @@ app.get('/daily-req', function(req,res) {
        context.error = error;
      });
 });
-
 app.get('/weekly-req', function(req,res) {
   var context = {};
   var apipath = 'https://api.edamam.com/search';
