@@ -52,7 +52,7 @@
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
-    width: 300px;
+    width: 400px;
     height: 350px;
     background: white;
     position: absolute;
@@ -89,7 +89,7 @@
     background: white;
     position: absolute;
     visibility: visible;
-    left: 400px;
+    left: 450px;
     top: 90px;
     display: block;
     white-space: nowrap;
