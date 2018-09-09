@@ -48,7 +48,7 @@
     overflow: hidden;
 }
 
-.nutrition {
+.ingredients {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
@@ -64,7 +64,7 @@
     overflow: hidden;
 }
 
-.ingredients {
+.nutrition {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
