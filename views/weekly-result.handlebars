@@ -10,7 +10,7 @@
   <br />
   <center>{{recipes.[0].label}}</center>
   <br />
-  <center><button on-click="location.href={{urls.[0]}}" class="btn btn-info btn-sm">Details</button></center>
+  <center><button onclick="location.href='{{urls.[0]}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="tues">
@@ -71,7 +71,7 @@
       Calories: {{params.min}} - {{params.max}}
    </center>
    <br />
-   <center><button on-click="location.href='/weekly' class="btn btn-warning">Edit</button></center>
+   <center><button onclick="location.href='/weekly'" class="btn btn-warning">Edit</button></center>
 </div>
 
 </div>
