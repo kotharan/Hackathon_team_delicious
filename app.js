@@ -36,7 +36,7 @@ app.get('/daily-req', function(req,res) {
 
     axios.get(apipath, {
        params: {
-         q: '',
+         q: 'dinner',
          app_id: id,
          app_key: key,
          diet: req.query.diet,
@@ -53,6 +53,7 @@ app.get('/daily-req', function(req,res) {
        else
        {
          var idx = 0;         
+         var attempts = 0;
          while(response.data.hits[idx].recipe.yield < req.query.servings && attempts < 5)
          {
            idx++;
@@ -88,7 +89,7 @@ app.get('/weekly-req', function(req,res) {
 
   axios.get(apipath, {
     params: {
-      q: '',
+      q: 'dinner',
       app_id: id,
       app_key: key,
       diet: req.query.diet,
