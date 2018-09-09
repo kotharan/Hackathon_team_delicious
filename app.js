@@ -40,12 +40,12 @@ app.get('/daily-req', function(req,res) {
          app_id: id,
          app_key: key,
          diet: req.query.diet,
-         excluded: req.query.excluded,
          health: req.query.health,
          calories: req.query.min + '-' + req.query.max
        }
      })
      .then(function (response) {
+       console.log(response);
        context.uri = response.data.hits[0].recipe.uri;
        context.label = response.data.hits[0].recipe.label;
        context.image = response.data.hits[0].recipe.image;
@@ -58,15 +58,14 @@ app.get('/daily-req', function(req,res) {
        context.dietLabels = response.data.hits[0].recipe.dietLabels;
        context.healthLabels = response.data.hits[0].recipe.healthLabels;
        context.params = req.query;
-       console.log("anything?");
-       console.log(context);
        res.render('daily-result', context);
      })
      .catch(function (error) {
-       context.error = error;
+       console.log(error);
      });
 });
 app.get('/weekly-req', function(req,res) {
+
   var context = {};
   var apipath = 'https://api.edamam.com/search';
 
@@ -76,7 +75,6 @@ app.get('/weekly-req', function(req,res) {
       app_id: id,
       app_key: key,
       diet: req.query.diet,
-      excluded: req.query.excluded,
       health: req.query.health,
       calories: req.query.min + '-' + req.query.max
     }
@@ -103,7 +101,7 @@ app.get('/weekly-req', function(req,res) {
     res.render('weekly-result', context);
   })
   .catch(function (error) {
-    context.error = error;
+    console.log(error);
   });
 });
 
