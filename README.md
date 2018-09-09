@@ -2,9 +2,9 @@
 
 Meal planner app that accepts requirements for a meal (calories, dietary needs, etc), and generates a one-day or week-long dinner plan.
 
-**Try it here:**  ______
+**Try it here:** https://team-delicious.herokuapp.com/home
 
-Created using JavaScript, Node, Express, Handlebars, and Bootstrap, and deployed on ________.
+Created using JavaScript, Node, Express, Handlebars, and Bootstrap, and deployed on Heroku.
 
 *Developed for the Oregon State University Hackathon Club's Spring 2018 Hackathon by:*
 * Lydia Batchelor [@lbatch](https://github.com/lbatch)
