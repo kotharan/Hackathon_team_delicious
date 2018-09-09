@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="./css/daily.css">
+
+<div class="bg">
+  <div class="title">Tonight's Dinner:</div>
+  <div class = "parameters form-group"><!--Div showing parameters that user put in-->
+    <center class="text">Parameters: </center>
+    <br />
+    <center>
+      Diet: {{params.diet}} <br />
+      Ingredients Excluded: {{#each excluded}}{{this}} {{/each}} <br />
+      Health Plan: {{params.health}} <br />
+      Calories: {{params.min}} - {{params.max}}
+    </center>
+    <br />
+    <center><button class="btn btn-info">Edit</button></center>
+  </div>
+  <div class="nutrition form-group"><!--Div showing nutrition facts of the recipe-->
+    <center class="text">Nutrition: </center>
+    <br />
+    <center>
+      {{#each totalNutrients}}
+         {{label}}: {{quantity}} {{unit}}
+         <br />
+      {{/each}}
+    </center>
+  </div>
+  <div class="recipe form-group"><!--Div showing recipe-->
+    <center class="text">Ingredients: </center>
+    <br />
+    <center>
+      {{#each ingredients}}
+         {{text}}
+         <br/>
+      {{/each}}
+    </center>
+  </div>
+  <div class="info">
+    <!--Div showing general dish info-->
+    <center><p class="text">Recipe name: </p>{{label}}</center>
+    <br />
+    <center><p class="text">Calories:</p>{{calories}}</center>
+    <br />
+    <center><p class="text">Source: </p><a href="{{ur}}">{{source}}</a></center>
+    <br />
+    <center><img src="{{image}}" style="width:250px;height:200px;"></center>
+  </div>
+</div>
