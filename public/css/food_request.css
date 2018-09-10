@@ -19,6 +19,8 @@ background-size: cover;
 overflow-x: hidden
 
 }
+
+/*For adding a font style and animation*/
 .container {
   position: relative;
   font-family: Sofia,Jokerman;
@@ -27,6 +29,7 @@ overflow-x: hidden
 
 }
 
+/*For ADding a transparent box over the text*/
 .text-block {
   border-radius: 25px;
   position: absolute;
@@ -40,7 +43,7 @@ overflow-x: hidden
   padding-right: 20px;
 
   }
-
+/*background*/
 .bg {
 
 background-image: url("requirements.jpg");
@@ -48,6 +51,8 @@ height: 100%;
 background-position: center;
 background-size: cover;
   }
+
+  /*Animation Code*/
   @keyframes example {
       0%   { left:100px; top:0px;}
       100%  { left:0px; top:0px;}
