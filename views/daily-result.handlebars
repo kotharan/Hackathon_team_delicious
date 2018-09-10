@@ -7,7 +7,6 @@
     <br />
     <center>
       Diet: {{params.diet}} <br />
-      Ingredients Excluded: {{#each excluded}}{{this}} {{/each}} <br />
       Health Plan: {{params.health}} <br />
       Calories: {{params.min}} - {{params.max}}
     </center>
@@ -27,21 +26,21 @@
       {{/each}}
     </center>
   </div>
-  <div class="ingredients form-group"><!--Div showing recipe-->
+  <div class="ingredients form-group"><!--Div showing ingredients-->
     <center class="text">Ingredients: </center>
     <br />
-    <center>
-      {{#each ingredients}}
-         {{text}}
-         <br/>
-      {{/each}}
-    </center>
+      <div class="scrollmenu">
+        <center>
+        {{#each ingredients}}
+            {{text}}
+            <br/>
+        {{/each}}
+        </center>
+      </div>
   </div>
   <div class="info">
     <!--Div showing general dish info-->
     <center><p class="text">Recipe name: </p>{{label}}</center>
-    <br />
-    <center><p class="text">Estimated cooking time: </p>{{time}}</center>
     <br />
     <center><p class="text">Calories:</p>{{calories}}</center>
     <br />

@@ -9,11 +9,12 @@ var url = require('url');
 const key = '79af778290ddfbd1a6148aed578f2bc2';
 const id = '2c673fd4';
 
+var port = process.env.PORT || 8080;
+
 app.engine('handlebars', handlebars.engine);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'handlebars');
-app.set('port', process.argv[2]);
 
 app.get('/home', function(req,res) {
   res.render('home');
@@ -36,7 +37,7 @@ app.get('/daily-req', function(req,res) {
 
     axios.get(apipath, {
        params: {
-         q: '',
+         q: 'dinner',
          app_id: id,
          app_key: key,
          diet: req.query.diet,
@@ -45,24 +46,43 @@ app.get('/daily-req', function(req,res) {
        }
      })
      .then(function (response) {
-       context.uri = response.data.hits[0].recipe.uri;
-       context.label = response.data.hits[0].recipe.label;
-       context.image = response.data.hits[0].recipe.image;
-       context.source = response.data.hits[0].recipe.source;
-       context.url = response.data.hits[0].recipe.url;
-       context.yield = response.data.hits[0].recipe.yield;
-       context.calories = response.data.hits[0].recipe.calories;
-       context.ingredients = response.data.hits[0].recipe.ingredients;
-       context.totalNutrients = response.data.hits[0].recipe.totalNutrients;
-       context.dietLabels = response.data.hits[0].recipe.dietLabels;
-       context.healthLabels = response.data.hits[0].recipe.healthLabels;
-       context.params = req.query;
-       res.render('daily-result', context);
-     })
+       if(response.data.hits.length == 0)
+       {
+         context.error = "Please try again (check your calories).";
+         res.render('daily', context);
+       }
+       else
+       {
+         var idx = 0;         
+         var attempts = 0;
+         while(response.data.hits[idx].recipe.yield < req.query.servings && attempts < 5)
+         {
+           idx++;
+           attempts++;
+         }
+
+         context.uri = response.data.hits[idx].recipe.uri;
+         context.label = response.data.hits[idx].recipe.label;
+         context.image = response.data.hits[idx].recipe.image;
+         context.source = response.data.hits[idx].recipe.source;
+         context.url = response.data.hits[idx].recipe.url;
+         context.yield = response.data.hits[idx].recipe.yield;
+         context.calories = response.data.hits[idx].recipe.calories;
+         context.ingredients = response.data.hits[idx].recipe.ingredients;
+         context.totalNutrients = response.data.hits[idx].recipe.totalNutrients;
+         context.dietLabels = response.data.hits[idx].recipe.dietLabels;
+         context.healthLabels = response.data.hits[idx].recipe.healthLabels;
+         context.params = req.query;
+         res.render('daily-result', context);
+       } 
+    })
      .catch(function (error) {
+       context.error = "Please try again (check your calories).";
        console.log(error);
+       res.render('daily', context);
      });
 });
+
 app.get('/weekly-req', function(req,res) {
 
   var context = {};
@@ -70,7 +90,7 @@ app.get('/weekly-req', function(req,res) {
 
   axios.get(apipath, {
     params: {
-      q: '',
+      q: 'dinner',
       app_id: id,
       app_key: key,
       diet: req.query.diet,
@@ -79,28 +99,38 @@ app.get('/weekly-req', function(req,res) {
     }
   })
   .then(function (response) {
-    var servings = 0;
+    var meals = 0;
     var idx = 0;
     var servingsLeft;
+    context.urls = [];
     context.recipes = [];
-    servingsLeft = response.data.hits[idx].recipe.yield;
-    while(servings < 7 && idx < response.data.count)
+    if(response.data.count < 3)
     {
-      context.recipes.push(response.data.hits[idx].recipe);
-      servingsLeft = servingsLeft - 1;
-      servings = servings + 1;
-      if(servingsLeft == 0)
-      {
-        idx++;
-        servingsLeft = response.data.hits[idx].recipe.yield;
-      }
+      context.error = "Please try again (check your calories).";
+      res.render('weekly', context);
     }
-    console.log(context.recipes);
-    context.params = req.query;
-    res.render('weekly-result', context);
+    else
+    {
+      servingsLeft = response.data.hits[idx].recipe.yield;
+      while(meals < 7 && (idx < response.data.count))
+      {
+        context.recipes.push(response.data.hits[idx].recipe);
+        servingsLeft = servingsLeft - req.query.servings;
+        meals++;
+        if(servingsLeft < req.query.servings)
+        {
+          idx++;
+          servingsLeft = response.data.hits[idx].recipe.yield;
+        }
+      }
+      context.params = req.query;
+      res.render('weekly-result', context);
+    }
   })
   .catch(function (error) {
+    context.error = "Please try again (check your calories).";
     console.log(error);
+    res.render('weekly', context);
   });
 });
 
@@ -115,6 +145,6 @@ app.use(function(err, req, res, next){
   res.render('500');
 });
 
-app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+app.listen(port, function(){
+  console.log('Express started on http://localhost:' + port + '; press Ctrl-C to terminate.');
 });

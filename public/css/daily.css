@@ -20,7 +20,7 @@
 .title {
     position: absolute;
     top: 10%;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Arial", Times, serif;
     font-style: oblique;
@@ -48,12 +48,12 @@
     overflow: hidden;
 }
 
-.nutrition {
+.ingredients {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
-    width: 275px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     background: white;
     position: absolute;
     visibility: visible;
@@ -64,12 +64,12 @@
     overflow: hidden;
 }
 
-.ingredients {
+.nutrition {
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
     width: 350px;
-    height: 620px;
+    height: 700px;
     background: white;
     position: absolute;
     visibility: visible;
@@ -84,12 +84,12 @@
     border-radius: 25px;
     border: 2px solid white;
     padding: 20px;
-    width: 600px;
+    width: 450px;
     height: 560px;
     background: white;
     position: absolute;
     visibility: visible;
-    left: 320px;
+    left: 450px;
     top: 90px;
     display: block;
     white-space: nowrap;
@@ -106,4 +106,18 @@
 
 #home {
     color: white;
+}
+
+div.scrollmenu {
+    background-color: white;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
 }

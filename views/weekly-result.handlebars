@@ -10,7 +10,7 @@
   <br />
   <center>{{recipes.[0].label}}</center>
   <br />
-  <center><button class="btn btn-info btn-sm">Details</button></center>
+  <center><button onclick="location.href='{{recipes.[0].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="tues">
@@ -18,7 +18,7 @@
   <br />
   <center>{{recipes.[1].label}}</center>
   <br />
-  <center><button class="btn btn-info btn-sm">Details</button></center>
+  <center><button onclick="location.href='{{recipes.[1].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="wed">
@@ -26,7 +26,7 @@
   <br />
   <center>{{recipes.[2].label}}</center>
   <br />
-  <center><button class="btn btn-info btn-sm">Details</button></center>
+  <center><button onclick="location.href='{{recipes.[2].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="thurs">
@@ -34,7 +34,7 @@
   <br />
   <center>{{recipes.[3].label}}</center>
   <br />
-  <center><button class="btn btn-info btn-sm">Details</button></center>
+  <center><button  onclick="location.href='{{recipes.[3].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="fri">
@@ -42,7 +42,7 @@
    <br />
    <center>{{recipes.[4].label}}</center>
    <br />
-   <center><button class="btn btn-info btn-sm">Details</button></center>
+   <center><button  onclick="location.href='{{recipes.[4].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="sat">
@@ -50,7 +50,7 @@
   <br />
   <center>{{recipes.[5].label}}</center>
   <br />
-  <center><button class="btn btn-info btn-sm">Details</button></center>
+  <center><button  onclick="location.href='{{recipes.[5].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="sun" class="day">
@@ -58,7 +58,7 @@
    <br />
    <center>{{recipes.[6].label}}</center>
    <br />
-   <center><button class="btn btn-info btn-sm">Details</button></center>
+   <center><button onclick="location.href='{{recipes.[6].url}}'" class="btn btn-info btn-sm">Details</button></center>
 </div>
 
 <div id="parameters">
@@ -66,12 +66,11 @@
    <br />
    <center>
       Diet: {{params.diet}} <br />
-      Ingredients Excluded: {{#each excluded}}{{this }}{{/each}} <br />
       Health Plan: {{params.health}} <br />
       Calories: {{params.min}} - {{params.max}}
    </center>
    <br />
-   <center><button on-click="location.href='/weekly' class="btn btn-warning">Edit</button></center>
+   <center><button onclick="location.href='/weekly'" class="btn btn-warning">Edit</button></center>
 </div>
 
 </div>
