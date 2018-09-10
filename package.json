@@ -19,5 +19,10 @@
     "mustache": "^2.3.2",
     "mysql": "^2.16.0",
     "save": "^2.3.2"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
+
+
 }
