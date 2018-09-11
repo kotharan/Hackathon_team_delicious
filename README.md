@@ -1,8 +1,8 @@
-# hackathon-sp18
+# Hackathon-sp18
 
 Meal planner app that accepts requirements for a meal (calories, dietary needs, etc), and generates a one-day or week-long dinner plan.
 
-**Try it here:** https://team-delicious.herokuapp.com/home
+**Try it here:** [https://team-delicious.herokuapp.com/home](https://team-delicious.herokuapp.com/home)
 
 Created using JavaScript, Node, Express, Handlebars, and Bootstrap, and deployed on Heroku.
 
