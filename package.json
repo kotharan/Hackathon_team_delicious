@@ -4,7 +4,8 @@
   "description": "Meal planner app using express and node.js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "SET NODE_ENV=development & nodemon app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
   },
   "author": "OSU",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "consolidate": "^0.15.1",
+    "event-stream": "^3.3.4",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
@@ -20,9 +22,7 @@
     "mysql": "^2.16.0",
     "save": "^2.3.2"
   },
-  "scripts": {
-    "start": "node app.js"
+  "devDependencies": {
+    "nodemon": "^1.18.7"
   }
-
-
 }
